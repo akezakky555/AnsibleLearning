@@ -1,0 +1,13 @@
+---
+- name: is downloading
+#  raw: sudo apt-get -y install nginx
+  get_url:
+     url: "https://wordpress.org/latest.tar.gz"
+     dest: /tmp/lastest.tar.gz
+
+- name: is unarchived
+#  raw: sudo tar xvf /tmp/lastest.tar.gz 
+  unarchive:
+     src: /tmp/lastest.tar.gz
+     dest: /var/www/html
+     remote_src: True

@@ -1,3 +1,9 @@
 ---
-- name: be sure ntp is installed
-  raw: sudo apt-get -y install nginx
+- name: is installing
+#  raw: sudo apt-get -y install nginx
+  apt:
+    name: nginx
+    state: latest
+- name: Copy nginx configuration for wordpress
+  template: src=default dest=/etc/nginx/sites-available/default
+  notify: restart nginx

@@ -1,0 +1,6 @@
+---
+- name: be sure ntp is installed
+#  raw: sudo apt-get -y install nginx
+  apt:
+    name: nginx
+    state: latest

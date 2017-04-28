@@ -1,0 +1,6 @@
+---
+- name: is installing
+#  raw: sudo apt-get -y install nginx
+  apt:
+    name: mariadb-server
+    state: latest

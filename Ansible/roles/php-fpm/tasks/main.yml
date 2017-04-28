@@ -1,0 +1,10 @@
+---
+- name: is installing
+#  raw: sudo apt-get -y install nginx
+  apt: name={{item}} state=latest
+  with_items:
+      - php7.0-fpm
+      - php7.0-mysql
+- service:
+    name: nginx
+    state: restarted
